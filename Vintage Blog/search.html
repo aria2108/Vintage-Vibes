@@ -2,10 +2,9 @@
 <html>
     <head>
         <title>Vintage Vibes</title>
-        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <link rel="stylesheet" href="style/search.css" type="text/css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
     </head>
     <body>
       
@@ -19,20 +18,27 @@
           <div class="navbar">
             <a href="index.html">Home</a>
             <a href="vin-designs.html">Vintage Designs</a>
-            <a href="404.html">Inspiration</a>
+            <a href="inspiration.html">Inspiration</a>
             <a class="active" href="search.html">Search</a>
           </div> 
-      
           <br/>
         <!-- content   -->
-        <div class="box">
+        
           <div class="center">
-            <h2>Search anything</h2>
-            <form class="search">
-              <input type="text" placeholder="Search.." name="search1">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+            <h2>Search anything</h2>           
+            <input id="input" type="search" placeholder="Search.." name="search1">
+            <button id="myBtn" type="submit" onclick="myFunction()">Search</button>
           </div>
-        </div>
+          <br/>
+          <p id="message"></p>
+          <script>
+            document.getElementById("input").onsearch = function() {myFunction()};
+            function myFunction() {
+              const x = document.getElementById ("input");
+              document.getElementById ("message").innerHTML = "Hello, we see you are searching for: " + x.value + 
+              ", unfortunately we found nothing. Please try again later :)!";
+            }
+          </script>
+            
     </body>
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <html>
+    <head>
+        <title>Vintage Vibes</title>
+        <link rel="stylesheet" href="style/Inspiration.css" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+      <!-- top-image -->
+      <div class="img-container">
+        <img class="logo1" src="Image/logo.png" alt="logo-vintage"/>
+        <img class="logo2" src="Image/chairs.jpeg" alt="vintage_chairs">
+      </div>
+     
+      <!-- navbar -->
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="vin-designs.html">Vintage Designs</a>
+        <a class="active" href="inspiration.html">Inspiration</a>
+        <a href="search.html">Search</a>
+      </div> 
+
+      <!-- content   -->
+      <h1>Inspiration Gallery</h1>
+      
+      <!-- slideshow-images -->
+      <div class="container">
+        <div class="slides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="Image/Le Corbusier/LC4 - Chaise longue-room.jpg">
+        </div>
+
+        <div class="slides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="Image/Charles and Ray Eames/hanging_it_all.jpg">
+        </div>
+
+        <div class="slides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="Image/Louis Poulsen/living-room-ph5-crop.jpg">
+        </div>
+          
+        <div class="slides fade">
+          <div class="numbertext">4 / 5</div>
+          <img src="Image/Max Bill/maxbill-dreirundtisch.jpg">
+        </div>
+
+        <div class="slides fade">
+          <div class="numbertext">5 / 5</div>
+          <img src="Image/Werner Max Moser/embru_beistelltisch_room.jpeg">
+        </div>
+          
+        <!-- Next and previous buttons -->   
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="Image/Le Corbusier/LC4 - Chaise longue-room.jpg" onclick="currentSlide(1)" alt="Le Corbusier - LC4 Lounge">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="Image/Charles and Ray Eames/hanging_it_all.jpg" onclick="currentSlide(2)" alt="Eames - Hanging it all">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="Image/Louis Poulsen/living-room-ph5-crop.jpg" onclick="currentSlide(3)" alt="Poul Henningsen - PH5">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="Image/Max Bill/maxbill-dreirundtisch.jpg" onclick="currentSlide(4)" alt="Max Bill - Three-round table">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="Image/Werner Max Moser/embru_beistelltisch_room.jpeg" onclick="currentSlide(5)" alt="Max Moser - Occasional side table">
+          </div>    
+        </div>
+      </div>
+      
+      <!-- Script -->
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("slides");
+          let dots = document.getElementsByClassName("demo");
+          let captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        </script>
+    </body>
+</html>

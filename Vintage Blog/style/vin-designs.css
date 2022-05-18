@@ -1,0 +1,102 @@
+* {box-sizing: border-box}
+body {font-family:'Times New Roman', Times, serif}
+
+.img-container {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+  }
+  .img-container > .logo1 {
+    width: 200px;
+  }
+  .img-container > .logo2 {
+    width: 220px;
+    justify-content: end;
+  }
+  /* @media screen and (max-width: 500px) {
+  .img-container > .logo1 .logo2{
+    width: 100%;
+    max-width: 100px;
+    }
+  } */
+/* styling navbar */
+  .navbar {
+    width: 100%;
+    background-color: #000000;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+  }
+  .navbar a {
+    color: #ffffff;
+    font-family: 'Courgette', Times, serif;
+    float: left;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%; /* Four links of equal widths */
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar a.active {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }  
+  
+
+/* vin-designs */
+
+.row-grid {
+  margin: 8px -16px;
+}
+.row-grid, .row-grid > .column-grid {
+  padding: 8px;
+}
+
+.column-grid {
+  float: left;
+  width: 33%;
+}
+.row-grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.img-grid {
+  max-width: 100%;
+  height: auto;
+}
+.item {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes the two columns 
+stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+.column-grid {
+    width: 100%;
+  }
+}
+.desc {
+  list-style: none;
+}
+.desc .detail::before {
+  content: "\2022";
+  color: #d14a0c;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
