@@ -59,7 +59,7 @@ body {font-family:'Times New Roman', Times, serif}
 h2 {
 text-align: center;
 }
-.center {
+#center {
   margin:auto;
   max-width:500px;
 }

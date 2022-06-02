@@ -22,23 +22,16 @@
             <a class="active" href="search.html">Search</a>
           </div> 
           <br/>
-        <!-- content   -->
+        <!-- content -->
         
-          <div class="center">
+          <div id="center">
             <h2>Search anything</h2>           
             <input id="input" type="search" placeholder="Search.." name="search1">
             <button id="myBtn" type="submit" onclick="myFunction()">Search</button>
           </div>
           <br/>
           <p id="message"></p>
-          <script>
-            document.getElementById("input").onsearch = function() {myFunction()};
-            function myFunction() {
-              const x = document.getElementById ("input");
-              document.getElementById ("message").innerHTML = "Hello, we see you are searching for: " + x.value + 
-              ", unfortunately we found nothing. Please try again later :)!";
-            }
-          </script>
-            
+          <script src="Script/search.js"></script>
+
     </body>
 </html>
